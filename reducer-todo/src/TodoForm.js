@@ -10,7 +10,11 @@ const TodoForm = ({ state, dispatch }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("Submitted");
+        dispatch({type: "ADD_TODO", payload: {
+            item: formState,
+            completed: false,
+            id: Date.now()
+        }});
     }
 
     const handleClear = e => {
@@ -19,7 +23,7 @@ const TodoForm = ({ state, dispatch }) => {
     }
 
     return(
-        <div>
+        <div className="todoForm">
             <h1>A to-do list!</h1>
             <form>
                 <label htmlFor="formState">New to-do: </label>

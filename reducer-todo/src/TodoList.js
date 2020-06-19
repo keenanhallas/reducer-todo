@@ -1,9 +1,11 @@
 import React from "react";
-
+import TodoCard from "../src/TodoCard";
 
 const TodoList = ({ state, dispatch }) => {
     return(
-        <h2>This will be the todo list!</h2>
+        <div className="todoList" style={{display: "flex", justifyContent: "center"}}>
+            <TodoCard name="test"/>
+        </div>
     );
 }
 

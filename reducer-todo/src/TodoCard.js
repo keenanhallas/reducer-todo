@@ -7,7 +7,7 @@ const TodoCard = ({todo, state, dispatch}) => {
     }
 
     return(
-        <div style={{border: "1px solid black", width: "75%"}}>
+        <div style={{border: "1px solid black", width: "75%", margin: "1%"}}>
             <h3 style={todo.completed ? {textDecoration: "line-through"} : null}>{todo.item}</h3>
             <button onClick={markComplete}>{todo.completed ? "Mark incomplete" : "Mark complete"}</button>
         </div>

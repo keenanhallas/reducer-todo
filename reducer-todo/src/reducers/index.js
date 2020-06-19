@@ -14,11 +14,26 @@ export const todoReducer = (state, action) => {
             return {
                 todos: [...state.todos, action.payload]
             }
-        case "TOGGLE_COMPLETED":
             return state;
+        case "TOGGLE_COMPLETED":
+            const newState = {
+                todos: state.todos.map(todo => {
+                    if(todo.id === action.payload.id){
+                        return {...action.payload, completed: !action.payload.completed};
+                    } else {
+                        return todo;
+                    }
+                })
+            }
+            return newState;
         case "REMOVE_COMPLETED":
             return state;
         default:
             return state;
     }
 }
+
+// if(todo.id === action.payload.id) {
+//     return {...action.payload, completed: !action.payload.completed}
+// }
+// return todo;

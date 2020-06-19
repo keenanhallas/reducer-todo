@@ -15,6 +15,7 @@ const TodoForm = ({ state, dispatch }) => {
             completed: false,
             id: Date.now()
         }});
+        setFormState("");
     }
 
     const handleClear = e => {

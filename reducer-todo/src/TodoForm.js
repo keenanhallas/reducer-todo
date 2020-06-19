@@ -20,7 +20,7 @@ const TodoForm = ({ state, dispatch }) => {
 
     const handleClear = e => {
         e.preventDefault();
-        console.log("Cleared");
+        dispatch({type: "CLEAR_COMPLETED"});
     }
 
     return(
